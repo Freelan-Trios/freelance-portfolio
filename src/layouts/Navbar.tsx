@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { RiCommandFill } from "react-icons/ri";
 import NavItems from "../json/navMenus.json";
+import { siteURL } from "../config";
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState<string>("Home");
@@ -11,11 +12,7 @@ export default function Navbar() {
     <nav className="w-[80%] mx-auto py-4 px-6 grid grid-cols-[20%_60%_20%] items-center">
       <div className="flex items-center">
         <Link to="/" className="text-2xl font-bold">
-          <img
-            src="https://aayushbharti.in/_next/static/media/ab-logo.39d6995f.svg"
-            alt="Logo"
-            width={"35px"}
-          />
+          <img src={siteURL} alt="Logo" width={"35px"} />
         </Link>
       </div>
 
