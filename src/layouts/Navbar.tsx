@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { RiCommandFill } from "react-icons/ri";
 import NavItems from "../json/navMenus.json";
@@ -7,6 +7,27 @@ import { siteURL } from "../config";
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState<string>("Home");
+  const { pathname } = useLocation();
+
+  const getTabNameFromPath = (path: string) => {
+    switch (path.toLowerCase()) {
+      case "/":
+        return "home";
+      case "/about":
+        return "about";
+      case "/projects":
+        return "projects";
+      case "/blogs":
+        return "blogs";
+      default:
+        return "";
+    }
+  };
+
+  useEffect(() => {
+    const tabName = getTabNameFromPath(pathname);
+    setActiveTab(tabName);
+  }, [pathname]);
 
   return (
     <nav className="w-[80%] mx-auto py-4 px-6 grid grid-cols-[20%_60%_20%] items-center">
@@ -19,7 +40,7 @@ export default function Navbar() {
       <div className="hidden md:flex w-full items-center justify-center">
         <div className="bg-zinc-900/80 max-w-max flex items-center justify-center px-4 py-2 rounded-full">
           {[...NavItems].map((item) => {
-            const isActive = activeTab === item.title;
+            const isActive = activeTab === item.title?.toLowerCase();
             return (
               <div key={item.id} className="relative px-4">
                 {isActive && (

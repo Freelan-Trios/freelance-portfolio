@@ -18,7 +18,7 @@ export default function TechStackSection() {
         <h2
           style={{
             textShadow:
-              "0px 4px 8px rgba(255,255,255,0.05), 0px 8px 30px rgba(255,255,255,0.25)",
+              "0px 4px 8px rgba(255,255,255,0.05), 0px 8px 15px rgba(255,255,255,0.25)",
           }}
           className=" top-0 w-full text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-center z-30 pb-5"
         >
@@ -27,8 +27,6 @@ export default function TechStackSection() {
           </p>
           <span className="text-white">Technologies Behind Our Work</span>
         </h2>
-
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-black/10 to-black/65"></div>
       </div>
 
       <div className="mt-10 w-full max-w-5xl">

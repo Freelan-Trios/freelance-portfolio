@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Star } from "../@types/component";
+import { Star } from "../../../@types/component";
 
 export default function BackgroundParticles() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
