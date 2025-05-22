@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { techStack } from "../../../utils/constants";
 import TechStackImage from "../../../assets/image/gpt.webp";
+import ContentTitle from "../../../components/ContentTitle";
 
 export default function TechStackSection() {
   return (
@@ -15,18 +16,10 @@ export default function TechStackSection() {
           />
         </div>
 
-        <h2
-          style={{
-            textShadow:
-              "0px 4px 8px rgba(255,255,255,0.05), 0px 8px 15px rgba(255,255,255,0.25)",
-          }}
-          className=" top-0 w-full text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-center z-30 pb-5"
-        >
-          <p className="mb-3 text-xs font-medium tracking-widest text-white/70 uppercase md:text-sm">
-            Leveling up—stack by stack
-          </p>
-          <span className="text-white">Technologies Behind Our Work</span>
-        </h2>
+        <ContentTitle
+          subtitle="Leveling up—stack by stack"
+          title="Technologies Behind Our Work"
+        />
       </div>
 
       <div className="mt-10 w-full max-w-5xl">
@@ -45,7 +38,7 @@ export default function TechStackSection() {
                 alt={tech.name}
                 width={18}
                 height={18}
-                className="transition duration-300 ease-in-out group-hover:scale-150"
+                className="transi tion duration-300 ease-in-out group-hover:scale-150"
               />
               <span className="transition duration-300 group-hover:text-white">
                 {tech.name}
